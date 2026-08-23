@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product &mdash; i-BIS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section id="product" class="product">
+        <div class="product-content">
+            <p class="product-eyebrow">Product</p>
+            <h2 class="product-title">Two hardware units, one intelligence layer</h2>
+            <p class="product-subtitle">i-RIS and i-BUSS are different physical units built for different jobs, but both run on the same i-BIS software brain underneath: the same detection, the same contamination mapping, the same live readout.</p>
+        </div>
+
+        <div class="product-mission">
+            <div class="product-mission-inner">
+                <p class="product-mission-text">River contamination doesn't only affect the people who regulate it &mdash; it affects the people who fish it, farm beside it, and drink from it every day. i-BIS is built to serve both.</p>
+                <blockquote class="product-quote">One system. A public safety net for communities, and a compliance-grade tool for the institutions accountable to them.</blockquote>
+            </div>
+        </div>
+
+        <div class="product-content">
+            <div class="product-tabs" role="tablist">
+                <button type="button" class="btn btn-primary product-tab" data-target="product-iris" role="tab" aria-selected="true">i-RIS</button>
+                <button type="button" class="btn btn-secondary product-tab" data-target="product-ibuss" role="tab" aria-selected="false">i-BUSS</button>
+            </div>
+
+            <div class="product-panel product-card" id="product-iris" role="tabpanel">
+                <div class="product-panel-media">
+                    <img src="public/images/I-RIS.png" alt="i-RIS stationary monitoring buoy floating in a river" class="product-panel-img">
+                </div>
+                <div class="product-panel-info">
+                    <p class="product-panel-eyebrow">Stationary monitoring buoy</p>
+                    <h3 class="product-panel-title">i-RIS</h3>
+                    <p class="product-panel-positioning">A fixed monitoring station, anchored at one point in the river for continuous, always-on readings.</p>
+
+                    <div class="product-spec-grid">
+                        <div class="product-spec">
+                            <h4>High-efficiency solar panel</h4>
+                            <p>5W monocrystalline, continuous power with no battery swaps.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Robust carry handle</h4>
+                            <p>For easy single-person handling and deployment.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Hi-vis, UV-resistant outer panels</h4>
+                            <p>Built to withstand prolonged sun and weather exposure.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>LED illumination ring</h4>
+                            <p>12 white LEDs, lights the scene for low-light and underwater capture.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Clear water-line indicator</h4>
+                            <p>At-a-glance visual check that the unit is floating and sealed correctly.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Reinforced unibody housing</h4>
+                            <p>IP68-rated, fully waterproof and dustproof.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Flush-mounted sensor array</h4>
+                            <p>pH and dissolved oxygen sensors.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Underwater high-res camera</h4>
+                            <p>1080p, bottom-facing.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Live on-device system status</h4>
+                            <p>Battery level and active/inactive state shown directly on the unit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-panel product-card" id="product-ibuss" role="tabpanel" hidden>
+                <div class="product-panel-media">
+                    <img src="public/images/i-BUSS.png" alt="i-BUSS mobile underwater survey unit in a river" class="product-panel-img">
+                </div>
+                <div class="product-panel-info">
+                    <p class="product-panel-eyebrow">Mobile underwater survey unit</p>
+                    <h3 class="product-panel-title">i-BUSS</h3>
+                    <p class="product-panel-positioning">A mobile unit that actively navigates between river stations, useful for surveying wider areas or higher fish-density zones rather than sitting in one fixed spot.</p>
+
+                    <div class="product-spec-grid">
+                        <div class="product-spec">
+                            <h4>Dual thrusters</h4>
+                            <p>Left and right thrusters let the unit actively move and navigate rather than staying fixed in place.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>4G/LTE antenna</h4>
+                            <p>Live data connectivity while roaming, not dependent on a fixed local connection.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Partially submersible design</h4>
+                            <p>Stays stable in current while moving.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>High-efficiency solar array</h4>
+                            <p>5W monocrystalline, continuous power on extended surveys.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Robust carry handle</h4>
+                            <p>For easy handling and deployment.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Hi-vis, UV-resistant panels</h4>
+                            <p>Built to withstand prolonged sun and weather exposure.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Underwater camera</h4>
+                            <p>Bottom-facing, for continuous visual monitoring while moving.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>Live water quality monitoring suite</h4>
+                            <p>Real-time pH (0&ndash;14), dissolved oxygen (mg/L), turbidity (NTU) and temperature, all on a live onboard readout.</p>
+                        </div>
+                        <div class="product-spec">
+                            <h4>IP68-rated housing</h4>
+                            <p>Live connectivity, battery and location status shown on-device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
