@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard &mdash; i-BIS</title>
+    <title>Dashboard | i-BIS</title>
     <meta name="description" content="Demo i-BIS dashboard with a simulated live map of river monitoring units.">
-    <meta property="og:title" content="Dashboard — i-BIS">
+    <meta property="og:title" content="Dashboard | i-BIS">
     <meta property="og:description" content="Demo i-BIS dashboard with a simulated live map of river monitoring units.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <!--
-        Access gate — demo only, not real security.
+        Access gate (demo only, not real security).
         This runs synchronously, before the rest of the page renders, so a
         visitor without a role in sessionStorage never sees the dashboard
         markup or map. It is trivially bypassed via devtools (just set
@@ -35,11 +35,11 @@
         <div class="about-content">
             <p class="about-eyebrow">Live view (demo)</p>
             <h1 class="about-title">Monitoring dashboard</h1>
-            <p class="about-lede">Simulated live positions for i-RIS stationary units and the i-BUSS mobile unit. Click a marker for its readings &mdash; the detail shown depends on which demo account you logged in with.</p>
+            <p class="about-lede">Simulated live positions for i-RIS stationary units and the i-BUSS mobile unit. Click a marker for its readings; the detail shown depends on which demo account you logged in with.</p>
 
             <div class="dashboard-toolbar">
-                <span id="dashboard-role-badge" class="dashboard-role-badge">Plan: &mdash;</span>
-                <span id="dashboard-updated" class="dashboard-updated">Last updated: &mdash;</span>
+                <span id="dashboard-role-badge" class="dashboard-role-badge">Plan: ...</span>
+                <span id="dashboard-updated" class="dashboard-updated">Last updated: ...</span>
             </div>
 
             <div class="about-card dashboard-map-card">
@@ -47,13 +47,15 @@
             </div>
 
             <p class="dashboard-legend">
-                <span class="legend-dot legend-dot--iris"></span> i-RIS (stationary)
-                <span class="legend-dot legend-dot--ibuss"></span> i-BUSS (mobile, simulated movement)
+                <span class="station-marker station-marker--iris legend-shape"><svg viewBox="0 0 26 26" width="16" height="16"><circle class="station-marker-shape" cx="13" cy="13" r="9" stroke="#EAEAEA" stroke-width="3"/></svg></span>
+                i-RIS (stationary)
+                <span class="station-marker station-marker--ibuss legend-shape"><svg viewBox="0 0 26 26" width="16" height="16"><polygon class="station-marker-shape" points="13,3 23,13 13,23 3,13" stroke="#EAEAEA" stroke-width="3" stroke-linejoin="round"/></svg></span>
+                i-BUSS (mobile, simulated movement)
             </p>
 
             <div class="about-card risk-map-card">
                 <h2 class="risk-map-title">Station Status</h2>
-                <p class="risk-map-note">Live readings across all i-RIS and i-BUSS units &mdash; detail shown depends on your plan.</p>
+                <p class="risk-map-note">Live readings across all i-RIS and i-BUSS units. Detail shown depends on your plan.</p>
 
                 <div id="risk-station-list" class="risk-station-grid"></div>
 
@@ -66,7 +68,7 @@
                 <a href="pricing.html" class="btn btn-primary">Upgrade to Premium</a>
             </div>
 
-            <p class="demo-disclaimer">Demo environment &mdash; accounts and live data shown here are simulated for demonstration purposes.</p>
+            <p class="demo-disclaimer">Demo environment. Accounts and live data shown here are simulated for demonstration purposes.</p>
         </div>
     </section>
 
