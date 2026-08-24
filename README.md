@@ -51,3 +51,8 @@ This started as a competition prototype, so the goal was to make the dashboard f
 | Premium | premium@i-bis.com | *(any password works)* |
 
 *(Client-side demo only: the role is stored in `sessionStorage` and can be edited via devtools; there's no real backend or authentication behind it.)*
+
+Google drive link for website guidance (Video):
+https://drive.google.com/drive/folders/16EHVQUNHgUiWZZkYohmTkkxfp6pbpvox?usp=sharing
+
+
