@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard &mdash; i-BIS</title>
+    <meta name="description" content="Demo i-BIS dashboard with a simulated live map of river monitoring units.">
+    <meta property="og:title" content="Dashboard — i-BIS">
+    <meta property="og:description" content="Demo i-BIS dashboard with a simulated live map of river monitoring units.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <!--
+        Access gate — demo only, not real security.
+        This runs synchronously, before the rest of the page renders, so a
+        visitor without a role in sessionStorage never sees the dashboard
+        markup or map. It is trivially bypassed via devtools (just set
+        sessionStorage.ibis_role = "premium"); that's expected for a
+        front-end-only prototype with no backend to actually authorize
+        against. See the DEMO AUTH LAYER comment in script.js.
+    -->
+    <script>
+        if (!sessionStorage.getItem('ibis_role')) {
+            location.replace('login.html');
+        }
+    </script>
+
+    <div id="navbar-placeholder"></div>
+
+    <section id="dashboard" class="about dashboard-section">
+        <div class="about-content">
+            <p class="about-eyebrow">Live view (demo)</p>
+            <h1 class="about-title">Monitoring dashboard</h1>
+            <p class="about-lede">Simulated live positions for i-RIS stationary units and the i-BUSS mobile unit. Click a marker for its readings &mdash; the detail shown depends on which demo account you logged in with.</p>
+
+            <div class="dashboard-toolbar">
+                <span id="dashboard-role-badge" class="dashboard-role-badge">Plan: &mdash;</span>
+                <span id="dashboard-updated" class="dashboard-updated">Last updated: &mdash;</span>
+            </div>
+
+            <div class="about-card dashboard-map-card">
+                <div id="map" class="dashboard-map"></div>
+            </div>
+
+            <p class="dashboard-legend">
+                <span class="legend-dot legend-dot--iris"></span> i-RIS (stationary)
+                <span class="legend-dot legend-dot--ibuss"></span> i-BUSS (mobile, simulated movement)
+            </p>
+
+            <div class="about-card risk-map-card">
+                <h2 class="risk-map-title">Station Status</h2>
+                <p class="risk-map-note">Live readings across all i-RIS and i-BUSS units &mdash; detail shown depends on your plan.</p>
+
+                <div id="risk-station-list" class="risk-station-grid"></div>
+
+                <div id="risk-detail" class="risk-detail" hidden></div>
+                <p id="risk-detail-placeholder" class="risk-detail-placeholder">Click a station card to see its details.</p>
+            </div>
+
+            <div id="upgrade-prompt" class="about-card upgrade-card" hidden>
+                <p class="upgrade-text">Want exact numbers instead of High/Low? Premium gives you full sensor readings, forecasts, and trend data for every station.</p>
+                <a href="pricing.html" class="btn btn-primary">Upgrade to Premium</a>
+            </div>
+
+            <p class="demo-disclaimer">Demo environment &mdash; accounts and live data shown here are simulated for demonstration purposes.</p>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

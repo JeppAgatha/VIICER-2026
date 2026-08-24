@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In &mdash; i-BIS</title>
+    <meta name="description" content="Demo login for the i-BIS prototype dashboard — no real account required.">
+    <meta property="og:title" content="Log In — i-BIS">
+    <meta property="og:description" content="Demo login for the i-BIS prototype dashboard.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section id="login" class="about login-section">
+        <div class="about-content login-content">
+            <p class="about-eyebrow">Prototype access</p>
+            <h1 class="about-title">Log in to the demo dashboard</h1>
+            <p class="about-lede">This is a competition prototype. There is no real account system — pick one of the two demo logins below to see how the dashboard looks for each plan.</p>
+
+            <div class="demo-credentials">
+                <p class="demo-credentials-title">Demo accounts &mdash; any password works</p>
+                <p><strong>Demo Free account:</strong> free@i-bis.com / any password</p>
+                <p><strong>Demo Premium account:</strong> premium@i-bis.com / any password</p>
+            </div>
+
+            <form class="about-card login-form">
+                <div class="form-field">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+                </div>
+
+                <p id="login-error" class="login-error" role="alert" hidden></p>
+
+                <button type="submit" class="btn btn-primary">Log in</button>
+            </form>
+
+            <p class="demo-disclaimer">Demo environment &mdash; accounts and live data shown here are simulated for demonstration purposes.</p>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
