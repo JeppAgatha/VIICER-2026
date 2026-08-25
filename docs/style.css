@@ -448,7 +448,35 @@ body {
 }
 
 .about-grid--platform {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Scoped to this section only (not the shared .about-card/.product-card
+   base rules, which are also used by team cards, pricing cards, product
+   spec panels, and the dashboard cards) so enlarging these four cards
+   doesn't change card sizing anywhere else on the site. */
+.about-grid--platform .about-card {
+    padding: 2.75rem;
+}
+
+.about-grid--platform .about-card-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.about-grid--platform .about-card-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.about-grid--platform .about-card h3 {
+    font-size: 1.45rem;
+}
+
+.about-grid--platform .about-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 .about-team-card {
@@ -552,6 +580,10 @@ body {
 
     .about-grid--platform {
         grid-template-columns: 1fr;
+    }
+
+    .about-grid--platform .about-card {
+        padding: 1.75rem;
     }
 
     .about-moat {
