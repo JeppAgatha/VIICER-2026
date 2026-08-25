@@ -145,7 +145,7 @@ if (mapEl) {
 
     const roleBadge = document.getElementById('dashboard-role-badge');
     if (roleBadge) {
-        roleBadge.textContent = 'Plan: ' + (role === 'premium' ? 'Premium' : 'Free');
+        roleBadge.textContent = 'Plan: ' + (role === 'premium' ? 'PREMIUM' : 'FREE');
         roleBadge.classList.toggle('dashboard-role-badge--premium', role === 'premium');
         roleBadge.classList.toggle('dashboard-role-badge--free', role !== 'premium');
     }
@@ -279,7 +279,7 @@ if (mapEl) {
     stations.forEach(station => {
         station.status = classifyStation(station.readings);
 
-        // Separate continuous 0..1 risk score used only for the +7/+30
+        // Separate continuous 0..1 risk score used only for the +7/+30/+90
         // day forecast trend below, not for any SAFE/CAUTION/UNSAFE
         // badge (those come from the classification above instead).
         const rawScore = (station.readings.leadPb / 0.08) * 0.35
@@ -290,12 +290,16 @@ if (mapEl) {
         const driftPerDay = (Math.random() - 0.5) * 0.02;
         const forecast7 = Math.max(0, Math.min(1, current + driftPerDay * 7));
         const forecast30 = Math.max(0, Math.min(1, current + driftPerDay * 30));
-        const delta30 = forecast30 - current;
+        const forecast90 = Math.max(0, Math.min(1, current + driftPerDay * 90));
+        // Trend reflects the full trajectory out to the furthest forecast
+        // point (90 days), not just the 30-day delta.
+        const delta90 = forecast90 - current;
 
         station.forecast = {
             forecast7,
             forecast30,
-            trend: delta30 > 0.03 ? 'RISING' : delta30 < -0.03 ? 'FALLING' : 'STABLE',
+            forecast90,
+            trend: delta90 > 0.03 ? 'RISING' : delta90 < -0.03 ? 'FALLING' : 'STABLE',
         };
     });
 
@@ -403,13 +407,14 @@ if (mapEl) {
             const forecastRows = `
                 <tr><td>+7 days risk score</td><td>${fc.forecast7.toFixed(2)}</td></tr>
                 <tr><td>+30 days risk score</td><td>${fc.forecast30.toFixed(2)}</td></tr>
+                <tr><td>+90 days risk score</td><td>${fc.forecast90.toFixed(2)}</td></tr>
                 <tr><td>Trend</td><td><span class="risk-trend ${trendClass}">${fc.trend}</span></td></tr>
             `;
             const forecastBody = buildTable(['Metric', 'Value'], forecastRows);
             forecastSegment = buildSegmentHTML('forecast', 'Forecast & Trend', forecastStatus, forecastBody);
         } else {
             const lockedBody = `
-                <p class="segment-note">Unlock exact 7 and 30 day risk forecasts, plus trend direction, with Premium.</p>
+                <p class="segment-note">Unlock exact 7, 30, and 90 day risk forecasts, plus trend direction, with Premium.</p>
                 <a href="pricing.html" class="btn btn-primary segment-upgrade-btn">Upgrade to Premium</a>
             `;
             forecastSegment = buildSegmentHTML('forecast', 'Forecast & Trend', 'LOCKED', lockedBody);

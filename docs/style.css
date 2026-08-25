@@ -255,11 +255,15 @@ body {
 }
 
 .btn {
+    display: inline-block;
     font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
     padding: 0.85rem 1.75rem;
+    border: none;
     border-radius: 999px;
     text-decoration: none;
+    cursor: pointer;
     transition: all 0.25s ease;
 }
 
@@ -281,6 +285,19 @@ body {
 
 .btn-secondary:hover {
     background: rgba(234, 234, 234, 0.1);
+}
+
+.btn:disabled {
+    background: rgba(10, 34, 57, 0.08);
+    color: rgba(10, 34, 57, 0.35);
+    border-color: rgba(10, 34, 57, 0.15);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn:disabled:hover {
+    background: rgba(10, 34, 57, 0.08);
+    transform: none;
 }
 
 /* About Hero */
@@ -339,6 +356,14 @@ body {
     line-height: 1.15;
     margin: 0;
     color: var(--silver);
+}
+
+.about-hero-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--silver);
+    margin: 1rem 0 0;
 }
 
 /* About */
@@ -419,6 +444,10 @@ body {
 }
 
 .about-grid--team {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.about-grid--platform {
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -510,10 +539,18 @@ body {
     .about-grid--team {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .about-grid--platform {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 560px) {
     .about-grid--team {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid--platform {
         grid-template-columns: 1fr;
     }
 
